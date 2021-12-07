@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</head>
+<body>
+
+<div class="sidenav">
+  <i class="fa fa-align-center" aria-hidden="true"></i>
+  <i class="fa fa-home" aria-hidden="true"></i>
+  <a href="#home">Home</a>
+  <i class="fa fa-yelp" aria-hidden="true"></i>
+  <a href="#dasboard">Dashboard</a>
+  <i class="fa fa-bandcamp" aria-hidden="true"></i>
+  <a href="#explorer">KPI Explorer</a>
+  <i class="fa fa-line-chart"></i>
+  <a href="#anomolies"></i>Anomolies</a>
+</div>
+
+<div class="main">
+  <span class="green">R</span><span>ranirgowdacs@gmail.com <i class="fa fa-caret-down" aria-hidden="true"></i></span>
+</div>
+
+<div class="sub-main">  
+  <h5>Dashboard / Test Dashboard 1 / AutoRCA</h5>
+  <h4><i class="fa fa-arrow-left" aria-hidden="true"></i> Test Dashboard 1</h4>
+</div>
+  <div class="row main-body">
+    <div class="column left list-of-kpi">
+      <h5 class="list">List of KPI's(OB)</h5>
+    <span class="search-kpi">  <i class="fa fa-search"></i>
+  <input type="text" placeholder="Search KPI" name="search2"></span>
+  
+      <a href="#menu" class="active">DAU's <i class="fa fa-caret-right" style="float: right;" aria-hidden="true"></i></a>
+      <a href="#home">Avg Engagement (Min)</a>
+      <a href="#dasboard">Order Value</a>
+      <a href="#explorer">Orders</a>
+      <a href="#anomolies">Revenue</a>
+      <div class="div-height"></div>
+    </div>
+  
+    <div class="column middle">
+      <div class="tab auto-anomolies">
+        <button class="tablinks active">AutoRCA</button>
+        <button class="tablinks">Anomolies</button>
+        <button class="tablinks" style="float: right;"><i class="fa fa-gear"></i> Settings</button>
+    </div>
+    <div class="row">
+      <div class="column mean-diff">
+        <table class="anomolies">
+          <tr>
+            <th></th>
+<th><pre>Last Month
+(Mar 1 To Mar 31)</pre></th>
+<th><pre>This Month
+(Mar 1 To Mar 31)</pre></th>
+            
+            <th>Difference</th>
+            
+          </tr>
+          <tr>
+            <td></td>
+            <td class="differ top-rd"><b>1152</b></td>
+            <td><b>3240</b></td>
+            <td class="col-gr"><b>2088</b> <i class="fa fa-caret-up col-gr" aria-hidden="true"></i></td>
+            
+          </tr>
+          <tr>
+            <td>Mean</td>
+            <td class="differ">0.27</td>
+            <td>0.32</td>
+            <td class="col-td">2.46 <i class="fa fa-caret-down col-td" aria-hidden="true"></i></td>
+            
+          </tr>
+          <tr>
+            <td>Median</td>
+            <td class="differ">0.27</td>
+            <td>0.32</td>
+            <td class="col-td">2.46 <i class="fa fa-caret-down col-td" aria-hidden="true"></i></td>
+          </tr>
+          <tr>
+            <td>Max</td>
+            <td class="differ">0.27</td>
+            <td>0.32</td>
+            <td class="col-gr">2.46 <i class="fa fa-caret-up col-gr" aria-hidden="true"></i></td>
+          </tr>
+          <tr>
+            <td>Min</td>
+            <td class="differ btm">0.27</td>
+            <td>0.32</td>
+            <td>2.46 <i class="fa fa-caret-down" aria-hidden="true"></i></td>
+          </tr>
+        </table>
+      </div>
+      
+      <div class="column mean-diff">
+      <canvas id="myChart" style="width:100%;max-width:600px;height:200px;"></canvas>
+      <script>
+        var xValues = [1,5,10,15,20,25,30];
+        
+        new Chart("myChart", {
+          type: "line",
+          data: {
+            labels: xValues,
+            datasets: [{ 
+              data: [500,1000,2000,3000,4000],
+              borderColor: "green",
+              fill: false
+            }, ]
+          },
+          options: {
+            legend: {display: false}
+          }
+        });
+        </script>
+        <label class="this-month"><b>This Month</b>(Apr 1 To Apr 31)</label>
+    </div></div>
+    <div class="drill"><h5>Drill Downs <i class="fa fa-caret-up" style="float: right;" aria-hidden="true"></i></h5></div>
+<div class="tab">
+  <button class="tablinks active">Housing</button>
+  <button class="tablinks">Loan</button>
+  <button class="tablinks">Education</button>
+  <button class="tablinks">Job</button>
+  <button class="tablinks" style="float: right;">Multidimensional <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+</div>
+
+<div class="row">
+
+<div class="tabcontent">
+  <i class="fa fa-database" aria-hidden="true"></i>
+  <h4>Add Data Source</h4>
+  <p>Select the data you want to Monitor and Analyse.</p>
+  <button class="tabutton">View Data Source</button>
+</div>
+
+<div class="tabcontent" style="color:white;background: linear-gradient(333.75deg, #222222 2.14%, rgba(34, 34, 34, 0.9) 103.46%) !important;">
+  <i class="fa fa-bandcamp" aria-hidden="true"></i>
+  <h4>Add KPI</h4>
+  <p>Select the data you want to Monitor and Analyse.</p> 
+  <button class="tabutton" style="background: linear-gradient(101.44deg, #DEFB9D 0%, #71F79E 37%, #38F9D7 70%, #89C4FE 100%);">Add KPI</button>
+</div>
+
+<div class="tabcontent">
+  <i class="fa fa-yelp" aria-hidden="true"></i>
+  <h4>Create Dashboard</h4>
+  <p>Select the data you want to Monitor and Analyse.</p>
+  <button class="tabutton">Create Dashboard</button>
+</div>
+</div>
+<div>
+  <h5>Top Drivers<span style="float:right"><label class="switch">
+    <input type="checkbox" checked>
+    <span class="slider round"></span>
+  </label> Remove Overlap</span></h5>
+
+</div>
+        <div class="top-drivers">
+          <table>
+            <tr class="top-head">
+              <th>Sub Group Name</th>
+              <th>April Avg</th>
+              <th>May Avg</th>
+              <th>April Sub Group population</th>
+              <th>May Sub Group population</th>
+              <th>Net Impact on Overall Avg</th>
+            </tr>
+            <tr>
+              <td>Housing-yes</td>
+              <td>0.27</td>
+              <td>0.32</td>
+              <td>2406</td>
+              <td>889</td>
+              <td class="col-td"><i class="fa fa-caret-down col-td" aria-hidden="true"></i> 0.16</td>
+            </tr>
+            <tr>
+              <td>Housing-yes</td>
+              <td>0.27</td>
+              <td>0.32</td>
+              <td>2406</td>
+              <td>889</td>
+              <td class="col-td"><i class="fa fa-caret-down col-td" aria-hidden="true"></i> 0.16</td>
+            </tr>
+            <tr>
+              <td>Housing-yes</td>
+              <td>0.27</td>
+              <td>0.32</td>
+              <td>2406</td>
+              <td>889</td>
+              <td class="col-td"><i class="fa fa-caret-down col-td" aria-hidden="true"></i> 0.16</td>
+            </tr>
+            <tr>
+              <td>Housing-yes</td>
+              <td>0.27</td>
+              <td>0.32</td>
+              <td>2406</td>
+              <td>889</td>
+              <td class="col-td"><i class="fa fa-caret-down col-td" aria-hidden="true"></i> 0.16</td>
+            </tr>
+            <tr>
+              <td>Housing-yes</td>
+              <td>0.27</td>
+              <td>0.32</td>
+              <td>2406</td>
+              <td>889</td>
+              <td class="col-td"><i class="fa fa-caret-down col-td" aria-hidden="true"></i> 0.16</td>
+            </tr>
+          </table>
+        </div>
+
+        <div><h5>Forms</h5></div>
+          <form action="/action_page.php">
+            <label for="kname">KPI Name *</label>
+            <input type="text" id="kname" name="firstname" placeholder="Name Of Your KPI">
+        
+            <label for="datasource">Select Data Source *</label>
+            <select id="datasource" name="datasource">
+              <option value="select">Select</option>
+              <option value="data1">data1</option>
+              <option value="data2">data2</option>
+            </select>
+          
+          <label for="lname">Table Name or Query *</label>
+            <input type="text" id="lname" name="tablename" placeholder="Enter Table Name or Query">
+            
+            <label for="matric">Matric Column *</label>
+            <input type="text" id="kname" name="matric" placeholder="Enter Metric Column">
+            
+             <label for="aggregate">Aggregate By *</label>
+            <select id="aggregate" name="aggregate">
+              <option value="select">Select</option>
+              <option value="aggregate1">aggregate1</option>
+              <option value="aggregate2">aggregate2</option>
+            </select>
+            
+          </form>
+        </div>
+    </div>
+    </div>
+  </div>
+</body>
+</html> 
